@@ -90,7 +90,7 @@ class Student
       SELECT * FROM students WHERE grade = 10 LIMIT 1
     SQL
     x = DB[:conn].execute(sql)[0]
-    self.first_student_in_grade_10(x)
+    self.new_from_db(x)
   end
 
   def self.all_students_in_grade_X(grade)
