@@ -76,9 +76,9 @@ class Student
     end
   end
 
-  def self.first_X_students_in_grade_10(limit)
+  def self.first_X_students_in_grade_10(count)
     sql = <<-SQL
-      SELECT COUNT(grade) FROM students GROUP BY grade HAVING grade = "10"
+      SELECT COUNT(?) FROM students GROUP BY grade HAVING grade = "10"
     SQL
     DB[:conn].execute(sql).map do |row|
       self.new_from_db(row)
