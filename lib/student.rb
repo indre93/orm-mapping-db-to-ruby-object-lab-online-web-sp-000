@@ -82,5 +82,5 @@ class Student
 
   end
 
-  
+
 end
